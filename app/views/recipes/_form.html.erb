@@ -1,0 +1,23 @@
+<%= form_for @recipe do |f| %>
+<div>
+<%= f.label :title %> <br>
+<%= f.text_field :title %>
+</div>
+<div>
+<%= f.label :image %> <br>
+<%= f.url_field :image %>
+</div>
+<div>
+<%= f.label :preptime %> <br>
+<%= f.text_field :preptime %>
+</div>
+<div>
+<%= f.label :serving%> <br>
+<%= f.text_field :serving %>
+</div>
+<div>
+<%= f.label :method %> <br>
+<%= f.text_area :method %>
+</div>
+<%= f.submit %>
+<% end %>

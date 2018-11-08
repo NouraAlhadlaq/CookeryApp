@@ -1,0 +1,28 @@
+<h2><%= @recipe.title %></h2>
+
+<img src="<%= @recipe.image %>" alt="image">
+
+<p><strong>prepare time: </strong><%= @recipe.preptime %></p>
+
+<p><strong>serving: </strong><%= @recipe.serving %></p>
+
+<ul>
+<li>
+<strong>Method:</strong> <br>  <%= @recipe.method %>
+</li>
+</ul>
+
+<strong>Comments: </strong>
+<% @recipe.comments.each do |comment| %>
+<li>
+<%= comment.name %>: <%= comment.body %> <%= link_to 'Remove comment', comment_path(comment), method: :delete %>
+</li>
+<% end %>
+
+<h1>Add new comment</h1>
+<%= render partial: 'comment_form' %>
+
+<%= link_to 'Edit Recipe', edit_recipe_path %>
+<%= link_to 'Remove Recipe', recipe_path, method: :delete %>
+
+
