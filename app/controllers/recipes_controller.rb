@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @recipes = Recipe.all
   end
@@ -12,8 +14,11 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(recipe_params)
-    redirect_to recipes_path
+    @recipe = Recipe.new(recipe_params)
+    @recipe.user_id = current_user.id
+    @recipe.save
+    redirect_to @recipe
+    # redirect_to recipes_path
   end
 
   def edit

@@ -1,3 +1,4 @@
+
 Recipe.destroy_all
 
 Stuffedpigeon = Recipe.create(title: "Stuffed pigeon with apple mostarda, cognac and amaretto", image: "https://gbc-cdn-public-media.azureedge.net/img77871.768x512.jpg", serving: "8", preptime: "1hour 30minutes", method: "To begin, run a blowtorch over the birds to burn off any feathers left on the surface. Wash the birds, dry well and set aside
@@ -30,7 +31,7 @@ Use a melon baller to prepare small spheres of the peach, apple and mango
 1 peach
 Carve the breasts and legs off of the birds, keeping them attached if possible. Serve with the fruit shapes, passion fruit, wild strawberries and the reduced sauce
 wild strawberries
-passion fruit")
+passion fruit", user_id: 1)
 
 TortelliDiZucca = Recipe.create(title: "Tortelli di zucca – pumpkin, mostarda and amaretti pasta", image: "https://gbc-cdn-public-media.azureedge.net/img77924.768x512.jpg", serving: "4", preptime: "1hour30minutes", method: "1
 Place the flour onto a surface and make a well in the centre. Add the egg yolks and bring together until you obtain a smooth and elastic dough. Place in the fridge to rest
@@ -60,8 +61,12 @@ Cook the tortelli in boiling water for 5 minutes
 7
 Drain and serve with melted butter and Parmesan
 Parmesan, grated
-1 knob of butter, melted")
+1 knob of butter, melted", user_id: 2)
 Comment.destroy_all
 
 reema = Comment.create(name: "Reema", body: "Yummy and easy", recipe_id: TortelliDiZucca.id)
+saad = Comment.create(name: "Saad", body: "tasteeey!", recipe_id: TortelliDiZucca.id)
+sara = Comment.create(name: "Sara", body: "Yummmmy!! ", recipe_id: TortelliDiZucca.id)
 halima = Comment.create(name: "Halima", body: "perfect!", recipe_id: Stuffedpigeon.id)
+anoud = Comment.create(name: "Anoud", body: "delicious!", recipe_id: Stuffedpigeon.id)
+hamad = Comment.create(name: "Hamad", body: "yummy!", recipe_id: Stuffedpigeon.id)

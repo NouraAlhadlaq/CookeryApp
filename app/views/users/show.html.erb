@@ -1,0 +1,16 @@
+<h2> Profile </h2>
+
+<h3><%= @user.username %></h3>
+<img src="<%= @user.image %>" alt="">
+
+<h3>About: </h3>
+<p><%= @user.about %></p>
+
+<h3>Recipes: </h3>
+<% @user.recipes.each do |recipe|%>
+<ul>
+<li>
+<%= link_to recipe.title, recipe_path(recipe) %>
+</li>
+</ul>
+<% end %>
