@@ -13,8 +13,9 @@
  *= require_tree .
  *= require_self
  */
-@import "materialize";
-body {
+/* @import "materialize"; */
+
+/* body {
 	margin: 20px;
 }
 nav {
@@ -25,4 +26,4 @@ nav {
 
 h2 {
 	font-family: 'Courgette', cursive;
-}
+} */
