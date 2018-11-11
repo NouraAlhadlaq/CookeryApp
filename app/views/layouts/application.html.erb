@@ -7,39 +7,42 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Courgette|Lobster|Patrick+Hand" rel="stylesheet">
   </head>
 
   <body>
   
-  <nav>
-
-  <%= link_to 'All Recipes', recipes_path %> 
-
+  <nav class= "nav-bar">
+  
+  <div class="#bcaaa4 brown lighten-3">
+  <ul  class="left hide-on-med-and-down">
+  <li><%= link_to 'All Recipes', recipes_path %> </li>
+  </ul>
+  
 
   <% if user_signed_in? %>
-    
-    <%= link_to 'Create recipe', new_recipe_path %>
-    <%= link_to "view profile", user_path(current_user) %>
+      <ul class="left hide-on-med-and-down">
+   <li><%= link_to 'Create recipe', new_recipe_path %></li> 
+    <li><%= link_to "view profile", user_path(current_user) %></li>
+    </ul>
+
+    <ul class="right hide-on-med-and-down">
     <%= link_to "Log_Out", destroy_user_session_path, method: :delete %>
+    </ul>
 
     <% else %>
-
-   <%= link_to "Log_in", new_user_session_path %>
-   <%= link_to "Sign_Up", new_user_registration_path %>
-  
+   <ul  class="right hide-on-med-and-down">
+   <li><%= link_to "Log_in", new_user_session_path %></li>
+   <li><%= link_to "Register", new_user_registration_path %></li>
+  </ul>
   <% end%>
+  </div>
   </nav>
-
-  <!--
-  <% if user_signed_in? %>
-  <p>Stuff for logged in users</p>
-<% else %>
-  <p>Stuff for logged out users</p>
-<% end %>
--->
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

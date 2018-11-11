@@ -18,7 +18,6 @@ class RecipesController < ApplicationController
     @recipe.user_id = current_user.id
     @recipe.save
     redirect_to @recipe
-    # redirect_to recipes_path
   end
 
   def edit

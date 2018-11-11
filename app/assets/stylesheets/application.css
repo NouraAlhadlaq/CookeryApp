@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+@import "materialize";
+body {
+	margin: 20px;
+}
+nav {
+	font-family: 'Patrick Hand', cursive;
+	background: #bcaaa4;
+	font-size: 22.5px;
+}
+
+h2 {
+	font-family: 'Courgette', cursive;
+}

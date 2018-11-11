@@ -1,34 +1,41 @@
 <h2><%= @recipe.title %></h2>
-<h3>by: <%= link_to @recipe.user.username, user_path(@recipe.user)  %></h3>
+
+<h5>by: <%= link_to @recipe.user.username, user_path(@recipe.user)  %></h5>
 
 <img src="<%= @recipe.image %>" alt="image">
 
-<p><strong>prepare time: </strong><%= @recipe.preptime %></p>
+<h5><strong>prepare time: </strong></h5>
 
-<p><strong>serving: </strong><%= @recipe.serving %></p>
+<p><%= @recipe.preptime %></p>
+
+<h5><strong>serving: </strong></h5>
+<p><%= @recipe.serving %></p>
 
 <ul>
 <li>
-<strong>Method:</strong> <br>  <%= @recipe.method %>
+<h5><strong>Method: </strong></h5> <br>  <%= @recipe.method %>
 </li>
 </ul>
 
-<strong>Comments: </strong>
-<% @recipe.comments.each do |comment| %>
-<li>
-<%= comment.name %>: <%= comment.body %> <%= link_to 'Remove comment', comment_path(comment), method: :delete %>
-</li>
-<% end %>
-
-<h3>Add new comment</h3>
-<%= render partial: 'comment_form' %>
-
 <% if user_signed_in? %>
 <% if current_user.id == @recipe.user.id %>
- <%= link_to 'Edit Recipe', edit_recipe_path %>
-<%= link_to 'Remove Recipe', recipe_path, method: :delete %> 
+ <%= button_to 'Edit Recipe', edit_recipe_path %> <%= button_to 'Remove Recipe', recipe_path, method: :delete %> 
 <% end %>
 <% end %>
 
+<h5><strong>Comments: </strong></h5>
+<% @recipe.comments.each do |comment| %>
+<li>
+<%= comment.name %>: <%= comment.body %> 
+<p> <%= comment.created_at  %></p>
 
+<% if user_signed_in? %>
+<% if current_user.username == comment.name %>
+<%= link_to 'Remove comment', comment_path(comment), method: :delete %>
+<% end %>
+<% end %>
+</li>
+<% end%>
 
+<h5>Add new comment</h5>
+<%= render partial: 'comment_form' %>
