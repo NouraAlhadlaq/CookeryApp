@@ -10,9 +10,11 @@
 #  method     :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Recipe < ApplicationRecord
   belongs_to :user
+  has_many :ingredients
   has_many :comments
 end

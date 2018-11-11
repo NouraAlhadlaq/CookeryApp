@@ -1,0 +1,15 @@
+<%= form_for @recipe.ingredients.new do |f| %>
+<div>
+<%= f.label :quantity %> <br>
+<%= f.text_field :quantity %>
+</div>
+<div>
+<%= f.label :name %> <br>
+<%= f.text_field :name %>
+</div>
+<div>
+<%= hidden_field_tag "ingredient[recipe_id]", params[:id]%>
+</div>
+<%= f.submit %>
+<% end %>
+

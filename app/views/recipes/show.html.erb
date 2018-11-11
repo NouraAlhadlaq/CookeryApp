@@ -11,6 +11,16 @@
 <h5><strong>serving: </strong></h5>
 <p><%= @recipe.serving %></p>
 
+<h5><strong>Ingredients: </strong></h5>
+<% @recipe.ingredients.each do |ingredient| %>
+<li>
+<%= ingredient.quantity  %> of <%= ingredient.name %> 
+</li>
+<% end%>
+
+<h5>Add new ingredient</h5>
+<%= render partial: 'ingredients' %>
+
 <ul>
 <li>
 <h5><strong>Method: </strong></h5> <br>  <%= @recipe.method %>
