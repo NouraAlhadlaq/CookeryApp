@@ -17,9 +17,9 @@
 //= require materialize
 //= require_tree
 
-$(document).on("turbolinks:load", function() {
-  $("h3").on("click", function() {
-    console.log("click");
-  });
-  $("select").formSelect();
-});
+// $(document).on("turbolinks:load", function() {
+//   $("h3").on("click", function() {
+//     console.log("click");
+//   });
+//   $("select").formSelect();
+// });
