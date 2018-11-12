@@ -33,13 +33,14 @@
 
 <div class="field">
   <%= f.label :image %><br />
-  <%= f.text_field :image, autocomplete: "image" %>
+  <%= f.file_field :image, autocomplete: "image" %>
 </div>
 
 <div class="field">
   <%= f.label :about %><br />
   <%= f.text_field :about, autocomplete: "about" %>
 </div>
+
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>

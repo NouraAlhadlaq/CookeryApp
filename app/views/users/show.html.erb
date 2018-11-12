@@ -1,7 +1,12 @@
-<h2> Profile </h2>
-
 <h3><%= @user.username %></h3>
-<img src="<%= @user.image %>" alt="">
+
+
+<% if @user.image.to_s.include? "cloudinary" %>
+    <%= cl_image_tag @user.image %>
+<% else %>
+    <img src="<%= @user.image %>" alt="">
+<% end %>
+
 
 <h3>About: </h3>
 <p><%= @user.about %></p>
@@ -14,3 +19,9 @@
 </li>
 </ul>
 <% end %>
+<% if user_signed_in? %>
+
+<%= link_to "edit profile information", edit_user_registration_path %>
+
+<% end %>
+

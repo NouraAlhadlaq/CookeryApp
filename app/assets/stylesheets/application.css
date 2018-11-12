@@ -15,15 +15,36 @@
  */
 /* @import "materialize"; */
 
-body {
-	margin: 20px;
+header {
+	text-align: center;
 }
-nav {
-	font-family: 'Patrick Hand', cursive;
-	background: #bcaaa4;
+
+body {
+	margin: auto;
+	/* background-image: url(https://www.marpewellness.com/wp-content/uploads/2017/02/38216558_m-e1487706381778-847x445.jpg); */
+	/* background-size: cover; */
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+.logo {
+}
+nav ul a {
+	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 22.5px;
 }
 
 h2 {
-	font-family: 'Courgette', cursive;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+footer {
+	color: white;
+}
+
+.recipe {
+	color: black;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h5 {
+	font-family: 'Ubuntu', sans-serif;
 }

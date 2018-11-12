@@ -1,35 +1,37 @@
 <h2><%= @recipe.title %></h2>
 
-<h5>by: <%= link_to @recipe.user.username, user_path(@recipe.user)  %></h5>
+<h5> by: <%= link_to @recipe.user.username, user_path(@recipe.user)  %></h5>
 
 <img src="<%= @recipe.image %>" alt="image">
 
-<h5><strong>prepare time: </strong></h5>
+<h5><i class="far fa-clock" style="font-size:24px;"></i> <%= @recipe.preptime %> | 
+<i class="fas fa-user" ></i>  <%= pluralize(@recipe.serving,"person") %> </h5> 
+<br>
+<h5><i class="fas fa-list-ul"></i> <strong> Ingredients:</strong> </h5>
 
-<p><%= @recipe.preptime %></p>
 
-<h5><strong>serving: </strong></h5>
-<p><%= @recipe.serving %></p>
-
-<h5><strong>Ingredients: </strong></h5>
 <% @recipe.ingredients.each do |ingredient| %>
 <li>
 <%= ingredient.quantity  %> of <%= ingredient.name %> 
 </li>
 <% end%>
 
-<h5>Add new ingredient</h5>
+<% if user_signed_in? %>
+<% if current_user.id == @recipe.user.id %>
+<h5>Add ingredients </h5>
 <%= render partial: 'ingredients' %>
+<% end %>
+<% end %>
 
 <ul>
 <li>
-<h5><strong>Method: </strong></h5> <br>  <%= @recipe.method %>
+<h5><i class="fas fa-mortar-pestle"></i><strong> Method: </strong></h5> <br>  <%= @recipe.method %>
 </li>
 </ul>
 
 <% if user_signed_in? %>
 <% if current_user.id == @recipe.user.id %>
- <%= button_to 'Edit Recipe', edit_recipe_path %> <%= button_to 'Remove Recipe', recipe_path, method: :delete %> 
+ <%= link_to 'Edit Recipe', edit_recipe_path %> <%= button_to 'Remove Recipe', recipe_path, method: :delete %> 
 <% end %>
 <% end %>
 

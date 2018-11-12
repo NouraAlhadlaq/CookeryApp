@@ -1,5 +1,5 @@
 
-<div class="recipes row">
+<div class=" row">
 <% @recipes.each do |recipe| %>
 <div class="col s4">
 <div class="card medium">
@@ -8,7 +8,7 @@
     </div>
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">
-       <a href="<%=recipe_path(recipe)%>"><%= recipe.title %></a>
+       <a class= "recipe " href="<%=recipe_path(recipe)%>"><%= recipe.title %></a>
       </span>
     </div>
   </div>
