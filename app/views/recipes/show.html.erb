@@ -22,13 +22,13 @@
 <%= render partial: 'ingredients' %>
 <% end %>
 <% end %>
-
+<br>
 <ul>
 <li>
-<h5><i class="fas fa-mortar-pestle"></i><strong> Method: </strong></h5> <br>  <%= @recipe.method %>
+<h5><i class="fas fa-mortar-pestle"></i><strong> Method: </strong></h5>  <%= @recipe.method %>
 </li>
 </ul>
-
+<br>
 <% if user_signed_in? %>
 <% if current_user.id == @recipe.user.id %>
  <%= link_to 'Edit Recipe', edit_recipe_path %> <%= button_to 'Remove Recipe', recipe_path, method: :delete %> 
@@ -37,9 +37,10 @@
 
 <h5><strong>Comments: </strong></h5>
 <% @recipe.comments.each do |comment| %>
+<div>
 <li>
 <%= comment.name %>: <%= comment.body %> 
-<p> <%= comment.created_at  %></p>
+<p> <%= comment.created_at.strftime("%d-%m-%y, %I:%M:%S %p")  %></p>
 
 <% if user_signed_in? %>
 <% if current_user.username == comment.name %>
@@ -47,6 +48,7 @@
 <% end %>
 <% end %>
 </li>
+</div>
 <% end%>
 
 
