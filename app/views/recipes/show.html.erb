@@ -2,7 +2,8 @@
 
 <h5> by: <%= link_to @recipe.user.username, user_path(@recipe.user)  %></h5>
 
-<img src="<%= @recipe.image %>" alt="image">
+<%= cl_image_tag @recipe.image %>
+
 
 <h5><i class="far fa-clock" style="font-size:24px;"></i> <%= @recipe.preptime %> | 
 <i class="fas fa-user" ></i>  <%= pluralize(@recipe.serving,"person") %> </h5> 
@@ -18,7 +19,7 @@
 
 <% if user_signed_in? %>
 <% if current_user.id == @recipe.user.id %>
-<h5>Add ingredients </h5>
+
 <%= render partial: 'ingredients' %>
 <% end %>
 <% end %>
