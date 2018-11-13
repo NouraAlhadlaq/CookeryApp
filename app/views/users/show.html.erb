@@ -5,9 +5,8 @@
 <% if @user.image.to_s.include? "cloudinary" %>
     <%= cl_image_tag @user.image %>
 <% else %>
-    <img src="<%= @user.image %>" alt="">
+    <img src="<%= @user.image %>" alt="" >
 <% end %>
-
 
 <h3>About: </h3>
 <p><%= @user.about %></p>
@@ -26,5 +25,3 @@
 
 <% end %>
 </div>
-
-

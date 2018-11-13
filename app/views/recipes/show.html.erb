@@ -4,11 +4,12 @@
 
 <%= cl_image_tag @recipe.image %>
 
-<h5><i class="far fa-clock" style="font-size:24px;"></i> <%= @recipe.preptime %> | 
+<h5><i class="far fa-clock" style="font-size:24px;"></i> <%= @recipe.preptime %>
+ | 
 <i class="fas fa-user" ></i>  <%= pluralize(@recipe.serving,"person") %> </h5> 
 <br>
-<h5><i class="fas fa-list-ul"></i> <strong> Ingredients:</strong> </h5>
 
+<h5><i class="fas fa-list-ul"></i> <strong> Ingredients:</strong> </h5>
 
 <% @recipe.ingredients.each do |ingredient| %>
 <li>
@@ -18,17 +19,19 @@
 
 <% if user_signed_in? %>
 <% if current_user.id == @recipe.user.id %>
-
 <%= render partial: 'ingredients' %>
 <% end %>
 <% end %>
 <br>
+
 <ul>
 <li>
-<h5><i class="fas fa-mortar-pestle"></i><strong> Method: </strong></h5>  <%= @recipe.method %>
+<h5><i class="fas fa-mortar-pestle"></i><strong> Method: </strong></h5>  
+<p><%= @recipe.method %></p>
 </li>
 </ul>
 <br>
+
 <% if user_signed_in? %>
 <% if current_user.id == @recipe.user.id %>
  <%= link_to 'Edit Recipe', edit_recipe_path %> <%= button_to 'Remove Recipe', recipe_path, method: :delete %> 
@@ -37,16 +40,11 @@
 
 <h5><strong>Comments: </strong></h5>
 <% @recipe.comments.each do |comment| %>
-<div>
-<% if user_signed_in? %>
-<% if current_user.username == comment.name %>
-<img class= "avatar" src="<%= @recipe.user.image %>" alt="avatar"> 
-<% end %>
-<% else %>
-<img class= "avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsJ3QXKZW06RifHq8303pbkVzqcPgsYBfDqjgcVYGmY_PXMnqh" alt="avatar"> 
-<% end %>
+<div class= "comment">
 
-<%= comment.name %>: <%= comment.body %> 
+<img class= "avatar" src="https://d1zzxdyvtq79bu.cloudfront.net/bundles/tacextranet/images/chef_pictures/chef_avatar.png" alt="avatar"> 
+<strong><%= comment.name %></strong>:
+<p><%= comment.body %> </p> 
 <p> <%= comment.created_at.strftime("%d-%m-%y, %I:%M:%S %p")  %></p>
 
 <% if user_signed_in? %>
