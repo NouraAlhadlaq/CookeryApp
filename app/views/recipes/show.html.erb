@@ -4,7 +4,6 @@
 
 <%= cl_image_tag @recipe.image %>
 
-
 <h5><i class="far fa-clock" style="font-size:24px;"></i> <%= @recipe.preptime %> | 
 <i class="fas fa-user" ></i>  <%= pluralize(@recipe.serving,"person") %> </h5> 
 <br>
@@ -13,7 +12,7 @@
 
 <% @recipe.ingredients.each do |ingredient| %>
 <li>
-<%= ingredient.quantity  %> of <%= ingredient.name %> 
+<%= ingredient.quantity  %>  <%= ingredient.name %> 
 </li>
 <% end%>
 
@@ -50,5 +49,5 @@
 </li>
 <% end%>
 
-<h5>Add new comment</h5>
+
 <%= render partial: 'comment_form' %>
