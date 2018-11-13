@@ -1,4 +1,4 @@
-<h3><%= @user.username %></h3>
+<h2><%= @user.username %></h2>
 
 <div class="profile">
 
@@ -8,20 +8,31 @@
     <img src="<%= @user.image %>" alt="" >
 <% end %>
 
-<h3>About: </h3>
+<h5>About: </h5>
+
 <p><%= @user.about %></p>
 
-<h3>My Recipes: </h3>
-<% @user.recipes.each do |recipe|%>
-<ul>
-<li>
--<%= link_to recipe.title, recipe_path(recipe) %>.
-</li>
-</ul>
+<h5>My Recipes: </h5>
+<div class=" row">
+<% @user.recipes.each do |recipe| %>
+<div class="col s3">
+<div class="card small">
+    <div class="card-image ">
+     <a href="<%=recipe_path(recipe)%>"> <img class="activator" src="<%= recipe.image %>"></a>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">
+       <a class= "recipe " href="<%=recipe_path(recipe)%>"><%= recipe.title %></a>
+      </span>
+    </div>
+  </div>
+ </div>
 <% end %>
+</div>
+
 <% if user_signed_in? %>
 
-<%= link_to "edit profile information", edit_user_registration_path %>
+<%= link_to "edit profile", edit_user_registration_path %>
 
 <% end %>
 </div>

@@ -5,9 +5,6 @@ header {
 
 body {
 	margin: auto;
-	/* background-image: url(https://www.marpewellness.com/wp-content/uploads/2017/02/38216558_m-e1487706381778-847x445.jpg); */
-	/* background-size: cover; */
-	/* font-family: 'Open Sans Condensed', sans-serif; */
 	background: #eae2d6;
 }
 nav {
@@ -40,12 +37,18 @@ div .comment {
 	padding: 5px;
 	margin: 5px;
 }
+
+div .comment .img-name {
+	display: inline-block;
+	padding: 10px;
+}
 li a {
 	color: black;
 }
 p {
 	font-size: 15px;
 }
+
 footer {
 	color: black;
 	background: #e1b80d;
