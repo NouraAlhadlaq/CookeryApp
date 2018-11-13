@@ -17,15 +17,18 @@
 
 header {
 	text-align: center;
+	background: #e1b80d;
 }
 
 body {
 	margin: auto;
 	/* background-image: url(https://www.marpewellness.com/wp-content/uploads/2017/02/38216558_m-e1487706381778-847x445.jpg); */
 	/* background-size: cover; */
-	font-family: 'Open Sans Condensed', sans-serif;
+	/* font-family: 'Open Sans Condensed', sans-serif; */
+	background: #eae2d6;
 }
-.logo {
+nav {
+	background: #867666;
 }
 nav ul a {
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -37,7 +40,9 @@ h2 {
 }
 
 footer {
-	color: white;
+	color: black;
+	background: #e1b80d;
+	margin-top: 30px;
 }
 
 .recipe {
@@ -47,4 +52,11 @@ footer {
 
 h5 {
 	font-family: 'Ubuntu', sans-serif;
+}
+
+.profile {
+}
+
+li a {
+	color: black;
 }

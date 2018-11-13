@@ -15,18 +15,6 @@
 <%= f.label :serving%> <br>
 <%= f.text_field :serving %>
 </div>
-<div>
-<%= f.label :ingredients%> <br>
-<%= f.fields_for :ingredients do |ff| %>
-  <div>
-    <%= ff.label :quantity %>
-    <%= ff.text_field :quantity %>
-  </div>
-  <div>
-    <%= ff.label :name %>
-    <%= ff.text_field :name %>
-  </div>
-<% end %>
 
 <div>
 <%= f.label :method %> <br>

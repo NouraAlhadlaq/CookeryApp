@@ -1,6 +1,6 @@
 <h3><%= @user.username %></h3>
 
-
+<div class="profile">
 <% if @user.image.to_s.include? "cloudinary" %>
     <%= cl_image_tag @user.image %>
 <% else %>
@@ -11,11 +11,11 @@
 <h3>About: </h3>
 <p><%= @user.about %></p>
 
-<h3>Recipes: </h3>
+<h3>My Recipes: </h3>
 <% @user.recipes.each do |recipe|%>
 <ul>
 <li>
-<%= link_to recipe.title, recipe_path(recipe) %>
+-<%= link_to recipe.title, recipe_path(recipe) %>.
 </li>
 </ul>
 <% end %>
@@ -24,4 +24,6 @@
 <%= link_to "edit profile information", edit_user_registration_path %>
 
 <% end %>
+</div>
+
 
