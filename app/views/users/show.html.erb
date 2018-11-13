@@ -1,6 +1,7 @@
 <h3><%= @user.username %></h3>
 
 <div class="profile">
+
 <% if @user.image.to_s.include? "cloudinary" %>
     <%= cl_image_tag @user.image %>
 <% else %>

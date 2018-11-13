@@ -54,7 +54,9 @@ h5 {
 	font-family: 'Ubuntu', sans-serif;
 }
 
-.profile {
+.avatar {
+	border-radius: 50%;
+	width: 50px;
 }
 
 li a {

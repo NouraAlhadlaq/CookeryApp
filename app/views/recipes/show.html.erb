@@ -38,7 +38,14 @@
 <h5><strong>Comments: </strong></h5>
 <% @recipe.comments.each do |comment| %>
 <div>
-<li>
+<% if user_signed_in? %>
+<% if current_user.username == comment.name %>
+<img class= "avatar" src="<%= @recipe.user.image %>" alt="avatar"> 
+<% end %>
+<% else %>
+<img class= "avatar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsJ3QXKZW06RifHq8303pbkVzqcPgsYBfDqjgcVYGmY_PXMnqh" alt="avatar"> 
+<% end %>
+
 <%= comment.name %>: <%= comment.body %> 
 <p> <%= comment.created_at.strftime("%d-%m-%y, %I:%M:%S %p")  %></p>
 
@@ -47,7 +54,7 @@
 <%= link_to 'Remove comment', comment_path(comment), method: :delete %>
 <% end %>
 <% end %>
-</li>
+
 </div>
 <% end%>
 
