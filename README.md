@@ -1,24 +1,41 @@
-# README Modified
+# **The cookery** (Recipes website)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## **Description:**
 
-- Ruby version
+This is a web application that allow users  share there recipes to the world.
 
-- System dependencies
+![screenshot](app/assets/images/screenshot.png)
+## **Link:**
 
-- Configuration
+[**The cookery**](https://damp-bayou-44259.herokuapp.com/)
 
-- Database creation
+## **Used Technologies:**
 
-- Database initialization
+- ruby on rails
+- HTML5
+- CSS
+  
 
-- How to run the test suite
+## **Credits:**
 
-- Services (job queues, cache servers, search engines, etc.)
+- [meterialize](https://materializecss.com/)
+- [Google Fonts](https://fonts.google.com/)
+- [cloudinary](https://cloudinary.com/)
+- [heroku](https://dashboard.heroku.com/login)
+- [postgress](https://www.postgresql.org/)
 
-- Deployment instructions
 
-- ...
+## **Features:**
+
+- Create new recipes 
+- Edit recipes
+- Delete recipes
+- Adding comments for signed-in and guest users
+- Removing comment for signed-in users
+## **Future Ideas:**
+
+- Adding search bar
+- list of recipes categories
+  
+

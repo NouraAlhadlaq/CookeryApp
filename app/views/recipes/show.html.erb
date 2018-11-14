@@ -8,9 +8,7 @@
 | 
 <i class="fas fa-user" ></i>  <%= pluralize(@recipe.serving,"person") %> </h5> 
 <br>
-<% if user_signed_in? && current_user.id == @recipe.user.id %>
-  <%= button_to 'Remove Recipe', recipe_path, method: :delete %> 
-<% end %>
+
 <h5><i class="fas fa-list-ul"></i> <strong> Ingredients:</strong> </h5>
 
 <% @recipe.ingredients.each do |ingredient| %>
@@ -36,6 +34,8 @@
 
 <% if user_signed_in? && current_user.id == @recipe.user.id %>
  <%= link_to 'Edit Recipe', edit_recipe_path %>
+<br>
+  <%= button_to 'Remove Recipe', recipe_path, method: :delete %> 
 <% end %>
 
 
