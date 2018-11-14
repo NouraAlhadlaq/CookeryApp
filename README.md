@@ -3,7 +3,7 @@
 
 ## **Description:**
 
-This is a web application that allow users  share there recipes to the world.
+This is a web application that allows users to share there recipes to the world.
 
 ![screenshot](app/assets/images/screenshot.png)
 ## **Link:**
